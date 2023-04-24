@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <div class="container">
+        <h3 style="margin: 20px;">Pose Estimator</h3>
+        <div>
+            <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+                <div>
+                    <div class="row">
+                        <img class="rounded mx-auto d-block" src="{{ new_upload.image.url }}" alt="" width="250" height="250">
+                    </div>
+                    <div class="row">
+                        <div class="jumbotron">
+                            <h3 class="display-4">Predicted class is: {{ res }}</h3>
+                            <hr class="my-4">
+                            <p class="lead">
+                              <a class="btn btn-primary btn-md" href="{% url 'home:home_view' %}" role="button">Make Another Prediction</a>
+                              <a class="btn btn-primary btn-md" role="button" id="tips_btn">Tips & Benefit</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-5 mb-5">
+                        <div>
+                            {% if res == "Chaturanga_Dandasana" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Strengthens arms, shoulders, and core; improves posture and body alignment.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your elbows close to your body, engage your core, and distribute your weight evenly across your hands and feet.</p>
+
+                            {% elif res == "Crescent_Lunge" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Stretches hips and hip flexors; strengthens legs, glutes, and core; improves balance.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your front knee over your ankle, engage your back leg, and maintain a strong core.</p>
+
+                            {% elif res == "Janu_Sirsasana" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Stretches hamstrings, lower back, and spine; calms the mind; may improve digestion.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your spine long, bend your front knee if necessary, and focus on folding from the hips.</p>
+
+                            {% elif res == "Malasana" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Stretches hips, groin, and lower back; may improve digestion; strengthens glutes.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your feet parallel, use a prop under your hips if needed, and press your elbows against your inner thighs to deepen the stretch.</p>
+
+                            % elif res == "Reclining_Supported_Twist" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Releases tension in the lower back and hips; stretches the spine; may aid digestion.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep both shoulders grounded, use a prop under your knee if necessary, and breathe deeply into the twist.</p>
+
+
+                            % elif res == "Salamba_Sirsasana_II" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Increases circulation to the brain; strengthens shoulders, arms, and core; improves balance.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Use a wall or spotter for support, engage your core, and press firmly into your forearms and hands.
+                            </p>
+                            
+                            % elif res == "Ustrasana" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Stretches chest, abdomen, and hip flexors; strengthens back and shoulders; may improve posture.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your hips over your knees, engage your core, and avoid crunching your lower back.
+                            </p>
+
+                            % elif res == "Utthita_Trikonasana" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Stretches hamstrings and hips; strengthens legs and core; improves balance.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Keep your front knee slightly bent, engage your core, and maintain a long spine.
+                            </p>
+
+                            % elif res == "Viparita_Karani" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Relieves stress; reduces swelling in the legs; gently stretches hamstrings and lower back.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Use a folded blanket under your hips for support, relax your upper body, and breathe deeply.
+                            </p>
+
+                            % elif res == "Viparita_Karani" %}
+
+                            <h3>Benefits:</h3>
+                            <p>Relieves stress; reduces swelling in the legs; gently stretches hamstrings and lower back.</p>
+                            <hr>
+                            <h3>Tips:</h3>
+                            <p>Use a folded blanket under your hips for support, relax your upper body, and breathe deeply.
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
